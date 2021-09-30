@@ -1,0 +1,115 @@
+table {
+  border-collapse: collapse;
+  align-content: center;
+}
+th {
+  background-color: antiquewhite;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+button {
+  background-color: antiquewhite;
+  width: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.nav-bar-left {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  background-color: antiquewhite;
+  transition: 0.5s;
+  padding-top: 50px;
+}
+
+.nav-bar-left-item {
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.nav-bar-left-item:hover {
+  background-color: white;
+  padding: 10px;
+}
+
+.nav-bar-top {
+  background-color: antiquewhite;
+  padding: 10px;
+}
+
+.content {
+  margin-left: 300px;
+  float: left;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.pop-up {
+  display: none;
+  position: fixed;
+  background-color: white;
+  padding: auto;
+  border: antiquewhite 1px solid;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4);
+}
+
+.update-form{
+  margin-top: 30px;
+  background-color: white;
+  width: 316px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  padding-bottom: 35px;
+}
+
+
+.pop-up button {
+  background-color: antiquewhite;
+  width: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  float: right;
+}
+
+input {
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  width: 300px;
+  font-family: "Lato", sans-serif;
+}
+
+.hiden-input {
+  width: 0;
+  height: 0;
+  padding: 0px;
+  margin: 0px;
+}
+
+.h2-padding {
+  padding: 0px;
+  margin: 0px;
+}
+
+div a {
+  text-decoration: none;
+}

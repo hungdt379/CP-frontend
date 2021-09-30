@@ -1,0 +1,43 @@
+body{
+    font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper-div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.login-form{
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 250px;
+    border: 1px antiquewhite solid;
+}
+
+input{
+    height: 30px;
+    margin-bottom: 15px;
+}
+h2{
+    text-align: center;
+}
+
+td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+button {
+    background-color: antiquewhite;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    margin-left: 180px;
+  }
