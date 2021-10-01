@@ -113,3 +113,28 @@ input {
 div a {
   text-decoration: none;
 }
+
+.paging{
+  text-align: center;
+  margin-top: 25px;
+}
+
+span{
+  padding: 5px 8px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+}
+
+option{
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  
+}
+
+select{
+  height: 26px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+}

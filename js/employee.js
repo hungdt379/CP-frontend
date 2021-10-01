@@ -1,6 +1,13 @@
-function getAllEmployee() {
+function getAllEmployee(pageIndex = 0, pageSize = 5) {
+
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://localhost:8080/api/employee/read");
+  xhttp.open(
+    "GET",
+    "http://localhost:8080/api/employee/read?pageIndex=" +
+      pageIndex +
+      "&pageSize=" +
+      pageSize
+  );
   var token = localStorage.getItem("token");
   console.log(token);
   xhttp.setRequestHeader("Authorization", "Bearer " + token);
@@ -27,6 +34,42 @@ function getAllEmployee() {
         trHTML += "</tr>";
       }
       document.getElementById("mytable").innerHTML = trHTML;
+
+      var pageHTML = "";
+      if (objects["total"] / objects["pageSize"] <= 1) {
+        pageHTML += "<span><a href=''>1</a></span>";
+        pageHTML += "<select id='select-per-page' onchange='getAllEmployee(0, this.value)'>";
+        pageHTML +="<option value='5'>5 per page</option>";
+        pageHTML +="<option value='10'>10 per page</option>";
+        pageHTML +="<option value='50'>50 per page</option>";
+        pageHTML +="</select>";
+        document.getElementById("page").innerHTML = pageHTML;
+        document.getElementById("select-per-page").value =pageSize;
+      }else{
+        var totalPage = Math.ceil(objects["total"] / objects["pageSize"]);
+
+        if(pageIndex>0){
+          pageHTML += "<span><a href=''>Prev</a></span>";
+        }
+        for(let i=1; i<=totalPage; i++){
+          pageHTML += "<span id='page-"+(i-1)+"'><a href='javascript:getAllEmployee("+(i-1)+","+5+")'>"+i+"</a></span>";
+        }
+        if(pageIndex < Math.ceil(objects["total"] / objects["pageSize"])-1){
+          pageHTML += "<span><a href='javascript:getAllEmployee("+(pageIndex+1)+","+5+")'>Next</a></span>";
+        }
+        pageHTML += "<select id='select-per-page' onchange='getAllEmployee(0, this.value)'>";
+        pageHTML +="<option value='5'>5 per page</option>";
+        pageHTML +="<option value='10'>10 per page</option>";
+        pageHTML +="<option value='50'>50 per page</option>";
+        pageHTML +="</select>";
+        
+        document.getElementById("page").innerHTML = pageHTML;
+        document.getElementById("page-"+pageIndex).style.backgroundColor = 'antiquewhite';
+        document.getElementById("select-per-page").value =pageSize;
+
+
+      }
+      
     }
   };
 }
